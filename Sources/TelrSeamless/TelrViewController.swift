@@ -17,7 +17,7 @@ public protocol TelrControllerDelegate {
     func didPaymentFail(messge:String)
 }
 
-class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewDelegate {
+public class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewDelegate {
     
     public var delegate : TelrControllerDelegate?
     
@@ -68,7 +68,7 @@ class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewD
     
     private var SCardList : [Scard] = []
     
-    struct Scard {
+    public struct Scard {
         var Expiry : String
         var Name : String
         var Transaction_ID : String
@@ -83,7 +83,7 @@ class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewD
     
     public var getSavedCards = ["api_storeid ":"15164", "api_authkey":"w7HrQ-N5xKK^5nrV","api_testmode":"1", "api_custref":"JB123"] as Dictionary<String, String>
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
         showActivityInd(message: "Checking for Saved Cards")
@@ -103,7 +103,7 @@ class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewD
         addWebView()
         addBackButton()
     }
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         getCardsinfo { result in
             self.hideActivityInd()
             print(self.SCardList)
@@ -429,11 +429,11 @@ class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewD
     }
     
     // Observe value
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let key = change?[NSKeyValueChangeKey.newKey] {
-            print("observeValue \(key)") // url value
-        }
-    }
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        if let key = change?[NSKeyValueChangeKey.newKey] {
+//            print("observeValue \(key)") // url value
+//        }
+//    }
     
     func loadWebView(redirectHtml:String){
         
@@ -869,11 +869,11 @@ class TelrViewController: UIViewController, XMLParserDelegate, UICollectionViewD
 
 extension TelrViewController : WKNavigationDelegate, WKUIDelegate, UIScrollViewDelegate{
     
-    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error)
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error)
       {
             print(error.localizedDescription)
        }
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             
             if let host = navigationAction.request.url?.host {
                 //print(#function, host)
@@ -892,7 +892,7 @@ extension TelrViewController : WKNavigationDelegate, WKUIDelegate, UIScrollViewD
             
             decisionHandler(.allow)
         }
-       func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)
+    public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!)
        {
             //        UIApplication.shared.isNetworkActivityIndicatorVisible = true
             print("Strat to load")
@@ -919,7 +919,7 @@ extension TelrViewController : WKNavigationDelegate, WKUIDelegate, UIScrollViewD
 
 
 extension TelrViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num: \(indexPath.row)")
         print("Value: \(SCardList[indexPath.row])")
         indexSelected = indexPath.row
@@ -929,11 +929,11 @@ extension TelrViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return SCardList.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath)
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: "MyCell")
 
@@ -966,7 +966,7 @@ extension TelrViewController: UITableViewDelegate, UITableViewDataSource {
        
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    public  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
 }
@@ -986,7 +986,7 @@ extension TelrViewController {
 
 extension TelrViewController : UITextFieldDelegate {
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
         if(textField == cardNumber){
            let currentText = textField.text! + string
@@ -1029,7 +1029,7 @@ extension Dictionary {
 }
 
 extension CharacterSet {
-    static let urlQueryValueAllowed: CharacterSet = {
+    public static let urlQueryValueAllowed: CharacterSet = {
         let generalDelimitersToEncode = ":#[]@" // does not include "?" or "/" due to RFC 3986 - Section 3.4
         let subDelimitersToEncode = "!$&'()*+,;="
 
