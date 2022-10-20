@@ -9,23 +9,23 @@ import Foundation
 
 
 public struct trxData{
-    var custTitle : String
-    var custFirstName : String
-    var custLastName : String
-    var addLine: String
-    var addCity: String
-    var addRegion : String
-    var addCountry : String
-    var email : String
-    var IPaddrress : String
-    var storeID : String
-    var authKey : String
-    var cartID : String
-    var cartDesc : String
-    var currency : String
-    var trxAmount : Int
-    var test : Int
-    var custref : String
+    public var custTitle : String
+    public var custFirstName : String
+    public var custLastName : String
+    public var addLine: String
+    public var addCity: String
+    public var addRegion : String
+    public var addCountry : String
+    public var email : String
+    public var IPaddrress : String
+    public var storeID : String
+    public var authKey : String
+    public var cartID : String
+    public var cartDesc : String
+    public var currency : String
+    public var trxAmount : Int
+    public var test : Int
+    public var custref : String
 }
 
 
