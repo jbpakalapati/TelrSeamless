@@ -21,25 +21,25 @@ public class TelrViewController: UIViewController, XMLParserDelegate, UICollecti
     
     public var delegate : TelrControllerDelegate?
     
-    public struct trxData{
-        var custTitle : String
-        var custFirstName : String
-        var custLastName : String
-        var addLine: String
-        var addCity: String
-        var addRegion : String
-        var addCountry : String
-        var email : String
-        var IPaddrress : String
-        var storeID : String
-        var authKey : String
-        var cartID : String
-        var cartDesc : String
-        var currency : String
-        var trxAmount : Int
-        var test : Int
-        var custref : String
-    }
+//    public struct trxData{
+//        var custTitle : String
+//        var custFirstName : String
+//        var custLastName : String
+//        var addLine: String
+//        var addCity: String
+//        var addRegion : String
+//        var addCountry : String
+//        var email : String
+//        var IPaddrress : String
+//        var storeID : String
+//        var authKey : String
+//        var cartID : String
+//        var cartDesc : String
+//        var currency : String
+//        var trxAmount : Int
+//        var test : Int
+//        var custref : String
+//    }
     
     public var tranDetails :trxData = trxData(custTitle: "Mr", custFirstName: "CustTest", custLastName: "CustTestLast", addLine: "Dubai Silicon", addCity: "DSO", addRegion: "Dubai", addCountry: "AE", email: "jb@gmail.com", IPaddrress: "192.168.1.2", storeID: "15164", authKey: "w7HrQ-N5xKK^5nrV", cartID: "Trx_123456", cartDesc: "testing Trx", currency: "AED", trxAmount: 1, test: 1, custref: "JB123" )
     public var customBackButton : UIButton?
@@ -82,6 +82,12 @@ public class TelrViewController: UIViewController, XMLParserDelegate, UICollecti
     private var cardNumberFormated = ""
     
     public var getSavedCards = ["api_storeid ":"15164", "api_authkey":"w7HrQ-N5xKK^5nrV","api_testmode":"1", "api_custref":"JB123"] as Dictionary<String, String>
+    
+ 
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
