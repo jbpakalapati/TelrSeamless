@@ -5,8 +5,8 @@ Import Package Dependencies:
 Github url : https://github.com/jbpakalapati/TelrSeamless.git 
 
  
-<iframe src="https://giphy.com/embed/FkqGHZv7G5tgjNWdK7" width="234" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/FkqGHZv7G5tgjNWdK7">via GIPHY</a></p>
 
+![](FkqGHZv7G5tgjNWdK7.gif)
 
 Confirm to TelrControllerDelegate & implement 
 
