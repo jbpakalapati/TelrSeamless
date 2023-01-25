@@ -6,7 +6,7 @@ Github url : https://github.com/jbpakalapati/TelrSeamless.git
 
  
 
-![](FkqGHZv7G5tgjNWdK7.gif)
+![image](https://media.giphy.com/media/FkqGHZv7G5tgjNWdK7/giphy.gif)
 
 Confirm to TelrControllerDelegate & implement 
 
