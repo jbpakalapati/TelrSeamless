@@ -6,7 +6,7 @@ Github url : https://github.com/jbpakalapati/TelrSeamless.git
 
  
 
-![image](https://media.giphy.com/media/FkqGHZv7G5tgjNWdK7/giphy.gif).      ![image](https://media.giphy.com/media/MBk0O2xx8hiIIo78ty/giphy.gif)
+![image](https://media.giphy.com/media/FkqGHZv7G5tgjNWdK7/giphy.gif).      ![image](https://media.giphy.com/media/WiloFfKKy7ZUNHqRbp/giphy.gif)
 
 ## Telr React Native
 ![image](https://media.giphy.com/media/BVFlNHPzXeNZA4pAiL/giphy.gif)
